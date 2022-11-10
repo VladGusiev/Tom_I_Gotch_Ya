@@ -7,6 +7,8 @@ public class Tom {
         this.health = health;
     }
 
+    //encapsulation
+    // Both methods used for decreasing Toms health depending on correct/incorrect answer
     public int getHealth() {
         return health;
     }

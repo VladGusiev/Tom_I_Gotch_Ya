@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class GameState {
 
     public boolean isGameRunning; //uses to control if game still in progress
-    char startGameInput; //used to track player progress in starting the game
+    char startGameInput; //used to track if player exiting main menu
     int difficultyInput; //used to track difficulty chosen by user
     Scanner userInput = new Scanner(System.in);
 
@@ -43,14 +43,19 @@ public class GameState {
         difficultyInput = userInput.nextInt();
         if (difficultyInput == 1) {
             System.out.println("Easy");
+            this.isGameRunning = true;
         } else if (difficultyInput == 2) {
             System.out.println("Medium");
-
+            this.isGameRunning = true;
         } else if (difficultyInput == 3) {
             System.out.println("Hard");
+            this.isGameRunning = true;
         } else chooseDifficulty();
+
+        GameLoop gameStart = new GameLoop(this.isGameRunning, 1);
     }
 
+    //encapsulation
     public boolean isGameRunning() {
         return isGameRunning;
     }
