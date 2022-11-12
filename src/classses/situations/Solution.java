@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-    int difficulty;
     List<String> solutions = new ArrayList<>();
 
     public Solution() {

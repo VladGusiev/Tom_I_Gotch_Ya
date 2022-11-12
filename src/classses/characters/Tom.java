@@ -1,7 +1,7 @@
 package classses.characters;
 
 public class Tom {
-    int health;
+    private int health;
 
     public Tom(int health) {
         this.health = health;
@@ -15,5 +15,11 @@ public class Tom {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+    public void incrementHealth(int hpAmount) {
+        this.health += hpAmount;
+    }
+    public void decrementHealth(int hpAmount) {
+        this.health -= hpAmount;
     }
 }

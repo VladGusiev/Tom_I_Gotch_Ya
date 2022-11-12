@@ -1,4 +1,4 @@
-import classses.*;
+import classses.game.GameState;
 
 public class Main {
     public static void main(String[] args) {

@@ -2,6 +2,7 @@ package classses.characters;
 
 public class Player {
     int money;
+    public static int points = 0;
 
     public Player(int money) {
         this.money = money;
@@ -24,6 +25,9 @@ public class Player {
 
     //used when answering wrong to any question
     public void incrementMoney() {
-        this.money += 50;
+        this.money += 20;
     }
+    public void decrementMoney(int amount) {this.money -= amount;}
+
+    public void incrementPoints() { points += 10; }
 }
