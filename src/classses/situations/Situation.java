@@ -7,8 +7,8 @@ import java.util.Objects;
 public class Situation {
     List<String> situations = new ArrayList<>();
 
-    //aggregation
-    Solution solutions = new Solution();
+    //composition, solutuons are local variable inside situations (if situations class die -> local variable die also)
+    private final Solution solutions = new Solution();
 
 
     public Situation() {

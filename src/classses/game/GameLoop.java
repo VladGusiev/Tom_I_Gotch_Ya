@@ -16,6 +16,8 @@ public class GameLoop {
     Tom tom;
     Player player;
     Scanner userAnswer = new Scanner(System.in);
+
+    //composition
     Situation situations = new Situation();
     Solution solutions = new Solution();
 
@@ -27,6 +29,7 @@ public class GameLoop {
     int PointsCorrectIncrementAmount = 1;
 
 
+    //Aggregation (to create this class needed only references to the objects, but objects can still live if this object dies)
     protected GameLoop(Tom tom, Player player) {
         this.tom = tom;
         this.player = player;

@@ -12,6 +12,8 @@ public class GameState {
     public static int difficultyInput; //used to track difficulty chosen by user
     Scanner userInput = new Scanner(System.in);
 
+
+    //composition tom and player are dependent on this class
     Tom tom = new Tom(100);// default value;
     Player player = new Player(100); // dafault value
 
@@ -30,9 +32,8 @@ public class GameState {
         //information for player, that he is in main menu
         System.out.println("--------------------------------------------");
         System.out.println("You are currently in Main Menu!");
-        System.out.println("To start game, press 'S'!");
+        System.out.println("To start game, press 'S/s'!");
         System.out.println("If you want to exit, press 'E/e'");
-
 
         //Taking user inputs
 
@@ -52,13 +53,19 @@ public class GameState {
         System.out.println("Choose difficulty: \n'1' -> Easy\n'2' -> Medium\n'3' -> Hard");
         difficultyInput = userInput.nextInt();
         if (difficultyInput == 1) {
+            this.tom.resetHealth();
+            this.player.resetMoney();
+            Player.resetPoints();
             System.out.println("You choose difficulty: Easy");
             isGameRunning = true;
-            while (tom.getHealth() > 0 && isGameRunning) {
-                new EasyGame(tom, player).Game(); //combination
+            while (this.tom.getHealth() > 0 && isGameRunning) {
+                new EasyGame(this.tom, this.player).Game();
             }
             this.mainMenu();
         } else if (difficultyInput == 2) {
+            this.tom.setHealth(100);
+            this.player.setMoney(100);
+            Player.points = 0;
             System.out.println("You choose difficulty:Medium");
             isGameRunning = true;
             while (tom.getHealth() > 0 && isGameRunning) {
@@ -69,14 +76,5 @@ public class GameState {
             System.out.println("You choose difficulty:Hard");
             isGameRunning = true;
         } else chooseDifficulty();
-    }
-
-    //encapsulation
-    public boolean isGameRunning() {
-        return isGameRunning;
-    }
-
-    public void setGameRunning(boolean gameRunning) {
-        isGameRunning = gameRunning;
     }
 }

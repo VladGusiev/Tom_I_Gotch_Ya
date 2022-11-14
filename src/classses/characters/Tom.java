@@ -16,6 +16,10 @@ public class Tom {
     public void setHealth(int health) {
         this.health = health;
     }
+
+    public final void resetHealth() {
+        this.health = 100;
+    }
     public void incrementHealth(int hpAmount) {
         this.health += hpAmount;
     }
